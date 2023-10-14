@@ -37,6 +37,13 @@ function empty() {
 const maxItems = 5
 console.log(`maxItems=${maxItems}`)
 
+function isFull() {
+  if (basket.length < maxItems) {
+    return false
+  }
+  return true
+}
+
 // Testing code
 // This is not how I actually write tests because I like unit tests
 {
@@ -56,6 +63,7 @@ console.log(`maxItems=${maxItems}`)
   }
   log("=== TESTING ===")
   log(`basket=${basket} (length=${basket.length})`)
+  log(`isFull: ${isFull()}`)
   log(`adding "apples" to basket`)
   log(`expected bool true: ${test(true, addItem("apples"))}`)
   log(`basket=${basket} (length=${basket.length})`)
@@ -64,11 +72,18 @@ console.log(`maxItems=${maxItems}`)
   addItem("eggs")
   log("added milk and eggs")
   log(`basket=${basket} (length=${basket.length})`)
+  log(`isFull: ${isFull()}`)
+  addItem("foo")
+  addItem("bar")
+  log("added foo and bar")
+  log(`basket=${basket} (length=${basket.length})`)
+  log(`isFull: ${isFull()}`)
   log("testing listItems")
   listItems()
   log("emptying basket")
   empty()
   log(`basket=${basket} (length=${basket.length})`)
+  log(`isFull: ${isFull()}`)
 }
 
 // DO NOT MODIFY
