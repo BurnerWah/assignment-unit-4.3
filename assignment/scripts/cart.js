@@ -28,6 +28,12 @@ function listItems() {
   }
 }
 
+function empty() {
+  while (basket.length > 0) {
+    basket.pop()
+  }
+}
+
 // DO NOT MODIFY
 // Used for automated testing
 try {
