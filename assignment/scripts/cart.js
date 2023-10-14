@@ -42,6 +42,14 @@ function isFull() {
   return true
 }
 
+function removeItem(item) {
+  const index = basket.indexOf(item)
+  if (index >= 0) {
+    return basket.splice(index, 1)[0]
+  }
+  return null
+}
+
 // Testing code
 // This is not how I actually write tests because I like unit tests
 {
@@ -80,6 +88,10 @@ function isFull() {
   log(`expected bool false: ${test(false, addItem("apples"))}`)
   log("testing listItems")
   listItems()
+  log(`removing apples: got ${removeItem("apples")}`)
+  log(`removing dmc2: got ${removeItem("dmc2")}`)
+  log(`basket=${basket} (length=${basket.length})`)
+  log(`isFull: ${isFull()}`)
   log("emptying basket")
   empty()
   log(`basket=${basket} (length=${basket.length})`)
