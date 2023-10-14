@@ -2,6 +2,24 @@ console.log("***** Cart Functions *****")
 // Make sure to test all functions here in the JS file!
 // We want to see how you are testing your code!!!
 
+/** @type {string[]} */
+const basket = []
+
+/**
+ * @param {string} item
+ * @returns
+ */
+function addItem(item) {
+  // It seems sensible for this to have some error handling to me
+  // Though i doubt it would actually matter
+  try {
+    basket.push(item)
+    return true
+  } catch (e) {
+    return false
+  }
+}
+
 // DO NOT MODIFY
 // Used for automated testing
 try {
