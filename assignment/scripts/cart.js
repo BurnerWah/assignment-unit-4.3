@@ -12,12 +12,10 @@ const basket = []
  * @returns {boolean}
  */
 function addItem(item) {
-  // It seems sensible for this to have some error handling to me
-  // Though i doubt it would actually matter
-  try {
+  if (!isFull()) {
     basket.push(item)
     return true
-  } catch (e) {
+  } else {
     return false
   }
 }
@@ -78,6 +76,8 @@ function isFull() {
   log("added foo and bar")
   log(`basket=${basket} (length=${basket.length})`)
   log(`isFull: ${isFull()}`)
+  log(`adding "apples" to basket`)
+  log(`expected bool false: ${test(false, addItem("apples"))}`)
   log("testing listItems")
   listItems()
   log("emptying basket")
