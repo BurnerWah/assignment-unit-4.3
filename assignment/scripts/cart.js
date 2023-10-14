@@ -34,6 +34,9 @@ function empty() {
   }
 }
 
+const maxItems = 5
+console.log(`maxItems=${maxItems}`)
+
 // Testing code
 // This is not how I actually write tests because I like unit tests
 {
