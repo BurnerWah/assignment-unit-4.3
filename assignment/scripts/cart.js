@@ -20,6 +20,12 @@ function addItem(item) {
   }
 }
 
+function listItems() {
+  for (const item of basket) {
+    console.log(item)
+  }
+}
+
 // DO NOT MODIFY
 // Used for automated testing
 try {
