@@ -2,12 +2,14 @@ console.log("***** Cart Functions *****")
 // Make sure to test all functions here in the JS file!
 // We want to see how you are testing your code!!!
 
+// (i am using the vscode mocha extension to test things usually)
+
 /** @type {string[]} */
 const basket = []
 
 /**
  * @param {string} item
- * @returns
+ * @returns {boolean}
  */
 function addItem(item) {
   // It seems sensible for this to have some error handling to me
