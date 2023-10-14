@@ -34,6 +34,40 @@ function empty() {
   }
 }
 
+// Testing code
+// This is not how I actually write tests because I like unit tests
+{
+  const { log } = console
+  /**
+   * @template T
+   * @param {T} expected
+   * @param {T | any} actual
+   * @returns {"PASSED" | "FAILED"}
+   */
+  function test(expected, actual) {
+    if (expected === actual) {
+      return "PASSED"
+    } else {
+      return "FAILED"
+    }
+  }
+  log("=== TESTING ===")
+  log(`basket=${basket} (length=${basket.length})`)
+  log(`adding "apples" to basket`)
+  log(`expected bool true: ${test(true, addItem("apples"))}`)
+  log(`basket=${basket} (length=${basket.length})`)
+  // If that test passed we can safely add some more stuff
+  addItem("milk")
+  addItem("eggs")
+  log("added milk and eggs")
+  log(`basket=${basket} (length=${basket.length})`)
+  log("testing listItems")
+  listItems()
+  log("emptying basket")
+  empty()
+  log(`basket=${basket} (length=${basket.length})`)
+}
+
 // DO NOT MODIFY
 // Used for automated testing
 try {
